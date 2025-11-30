@@ -25,3 +25,25 @@ export default async function BlogDetails({
   });
 
   return (
+    <article className="container py-12 space-y-6" dir={dir}>
+      <div className="relative h-80 rounded-3xl overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.titleEn}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="space-y-4">
+        <h1 className="section-title">
+          {String(title)}
+        </h1>
+
+        <div className="prose prose-lg max-w-none" dir={dir}>
+          {String(content)}
+        </div>
+      </div>
+    </article>
+  );
+}
